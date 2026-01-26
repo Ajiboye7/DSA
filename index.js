@@ -85,9 +85,9 @@ function factorialRecursive(n) {
 
 //2. SEARCH ALGORITHM
 // Linear Search Algorithm
-function findIndex(array, n) {
+function findIndex(array, target) {
   for (let i = 0; i < array.length; i++) {
-    if (array[i] === n) {
+    if (array[i] === target) {
       return i;
     }
   }
@@ -122,3 +122,29 @@ function binarySearch(arr, target) {
 
 //time complexity = o(log n) : Each loop removes half the array.
 //space complexity = o(1) : No recursion, no extra memory
+
+function recursiveBinarySearch(
+  arr,
+  target,
+  leftIndex = 0,
+  rightIndex = arr.length - 1,
+) {
+  while (leftIndex <= rightIndex) {
+    let middleIndex = Math.floor((leftIndex + rightIndex) / 2);
+
+    if (arr[middleIndex] === target) {
+      return middleIndex;
+    }
+
+    if (arr[middleIndex] > target) {
+      return recursiveBinarySearch(arr, target, leftIndex, middleIndex - 1);
+    } else {
+      return recursiveBinarySearch(arr, target, mid + 1, rightIndex);
+    }
+  }
+}
+
+//console.log(binarySearch([1, 2, 4, 5, 6], 4))
+
+//time complexity = o(log n): Each loop removes half the array.
+//space complexity = o(n) :  Call stack depth grows with n
