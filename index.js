@@ -129,7 +129,9 @@ function recursiveBinarySearch(
   leftIndex = 0,
   rightIndex = arr.length - 1,
 ) {
-  while (leftIndex <= rightIndex) {
+  if (leftIndex > rightIndex) {
+    return -1;
+  }
     let middleIndex = Math.floor((leftIndex + rightIndex) / 2);
 
     if (arr[middleIndex] === target) {
@@ -141,10 +143,39 @@ function recursiveBinarySearch(
     } else {
       return recursiveBinarySearch(arr, target, mid + 1, rightIndex);
     }
-  }
+ 
 }
 
 //console.log(binarySearch([1, 2, 4, 5, 6], 4))
 
 //time complexity = o(log n): Each loop removes half the array.
 //space complexity = o(n) :  Call stack depth grows with n
+
+function sumArray(arr){
+  if(arr.length === 0){
+    return 0
+  }
+
+  return arr[0] + sumArray(arr.slice(1))
+}
+
+console.log(sumArray([1, 2, 3, 4, 5, 6]))
+
+function countVowels(vowel, isVowel = 0){
+  if(vowel.length === 0){
+    return 0
+  }
+
+  if(vowel[1] === 'a'||'e'|| 'i'|| 'o'|| 'u'){
+    return sum = isVowel + 1;
+  }
+
+
+  return countVowels(vowel.slice(1))
+}
+
+function findMax(array){
+  if(array.length === 0){
+    return -1
+  }
+}
