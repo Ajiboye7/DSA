@@ -132,50 +132,182 @@ function recursiveBinarySearch(
   if (leftIndex > rightIndex) {
     return -1;
   }
-    let middleIndex = Math.floor((leftIndex + rightIndex) / 2);
+  let middleIndex = Math.floor((leftIndex + rightIndex) / 2);
 
-    if (arr[middleIndex] === target) {
-      return middleIndex;
-    }
+  if (arr[middleIndex] === target) {
+    return middleIndex;
+  }
 
-    if (arr[middleIndex] > target) {
-      return recursiveBinarySearch(arr, target, leftIndex, middleIndex - 1);
-    } else {
-      return recursiveBinarySearch(arr, target, mid + 1, rightIndex);
-    }
- 
+  if (arr[middleIndex] > target) {
+    return recursiveBinarySearch(arr, target, leftIndex, middleIndex - 1);
+  } else {
+    return recursiveBinarySearch(arr, target, mid + 1, rightIndex);
+  }
 }
 
 //console.log(binarySearch([1, 2, 4, 5, 6], 4))
 
 //time complexity = o(log n): Each loop removes half the array.
 //space complexity = o(n) :  Call stack depth grows with n
+/*function bubbleSort(arr) {
+    let n = arr.length;
 
-function sumArray(arr){
-  if(arr.length === 0){
-    return 0
-  }
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n - i - 1; j++) { 
+            if (arr[j] > arr[j + 1]) {
+                // Swap elements
+                let temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
 
-  return arr[0] + sumArray(arr.slice(1))
+    return arr;
 }
 
-console.log(sumArray([1, 2, 3, 4, 5, 6]))
+// Example usage
+let numbers = [5, 1, 4, 2, 8];
+console.log(bubbleSort(numbers));*/
 
-function countVowels(vowel, isVowel = 0){
-  if(vowel.length === 0){
-    return 0
+function sumArray(arr) {
+  if (arr.length === 0) {
+    return 0;
   }
 
-  if(vowel[1] === 'a'||'e'|| 'i'|| 'o'|| 'u'){
-    return sum = isVowel + 1;
-  }
-
-
-  return countVowels(vowel.slice(1))
+  return arr[0] + sumArray(arr.slice(1));
 }
 
-function findMax(array){
-  if(array.length === 0){
-    return -1
+//console.log(sumArray([1, 2, 3, 4, 5, 6]));
+
+function countVowels(str) {
+  if (str.length === 0) {
+    return 0;
+  }
+  const vowels = "aeiou";
+  const firstChar = str[0].toLowerCase();
+
+  return (vowels.includes(firstChar) ? 1 : 0) + countVowels(str.slice(1));
+}
+
+//console.log(countVowels('ajiboye'))
+
+function findMax(arr) {
+  if (arr.length === 0) {
+    return -1;
+  }
+
+  if (arr[0] > arr[1]) {
+    return arr[0];
+  } else {
+    return findMax(arr.slice(1));
   }
 }
+
+//console.log(findMax([1, 2, 3, 4, 5]));
+
+function findMax(arr) {
+  // Base case
+  if (arr.length === 1) {
+    return arr[0];
+  }
+
+  // Smaller problem
+  const maxOfRest = findMax(arr.slice(1));
+
+  // Combine
+  return arr[0] > maxOfRest ? arr[0] : maxOfRest;
+}
+
+function palindrome(str) {
+  if (str.length === 0 || str.length === 1) {
+    return true;
+  }
+  const last = str[str.length - 1];
+  const first = str[0];
+  if (first !== last) {
+    return false;
+  }
+
+  return palindrome(str.slice(1, -1));
+}
+
+//console.log(palindrome('madam'))
+
+function binarySearch2(arr, target) {
+  if (arr.length === 0) {
+    return false;
+  }
+  let left = 0;
+  let right = arr.length - 1;
+  let mid = Math.floor((left + right) / 2);
+  if (target === arr[mid]) {
+    return true;
+  }
+  if (arr[mid] > target) {
+    return binarySearch.slice((0, mid), target);
+  } else {
+    return binarySearch(arr.slice(mid + 1), target);
+  }
+}
+
+//console.log(search([1, 3, 5, 7, 9], 71));
+
+function flatten(arr) {
+  if (arr.length === 0) {
+    return [];
+  }
+
+  const first = arr[0];
+  const rest = arr.slice(1);
+
+  if (Array.isArray(first)) {
+    return flatten(first).concat(flatten(rest));
+  } else {
+    return [first].concat(flatten(rest));
+  }
+}
+
+//console.log(isArray([1, 3, [5, 7], 9]))
+
+function bubbleSort(arr) {
+  let n = arr.length;
+
+  for (let i = 0; i < n; i++) {
+    let swapped = false;
+
+    for (let j = 0; j < n - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+        swapped = true;
+      }
+    }
+    if (!swapped) break;
+  }
+  return arr;
+}
+
+//console.log(bubbleSort([5, 1, 4, 2, 8]))
+
+// time complexity = O(n^2) : it contains nested loop
+// space complexity = O(n)
+
+function insertionSort(arr) {
+  for (let i = 1; i < arr.length; i++) {
+    let key = arr[i];
+    let j = i - 1;
+
+    // Move elements greater than key to one position ahead
+    while (j >= 0 && arr[j] > key) {
+      arr[j + 1] = arr[j];
+      j--;
+    }
+
+    // Insert key at the correct position
+    arr[j + 1] = key;
+  }
+  return arr;
+}
+console.log('Insertion sort',insertionSort([5, 1, 4, 2, 8]))
