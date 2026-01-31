@@ -212,10 +212,9 @@ function findMax(arr) {
     return arr[0];
   }
 
-  // Smaller problem
   const maxOfRest = findMax(arr.slice(1));
 
-  // Combine
+ 
   return arr[0] > maxOfRest ? arr[0] : maxOfRest;
 }
 
