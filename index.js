@@ -141,7 +141,7 @@ function recursiveBinarySearch(
   if (arr[middleIndex] > target) {
     return recursiveBinarySearch(arr, target, leftIndex, middleIndex - 1);
   } else {
-    return recursiveBinarySearch(arr, target, mid + 1, rightIndex);
+    return recursiveBinarySearch(arr, target, middleIndex + 1, rightIndex);
   }
 }
 
@@ -310,4 +310,34 @@ function insertionSort(arr) {
   }
   return arr;
 }
-console.log('Insertion sort',insertionSort([5, 1, 4, 2, 8]))
+//console.log('Insertion sort',insertionSort([5, 1, 4, 2, 8]))
+
+function appear(arr, target) {
+  if (arr.length === 0) {
+    return 0;
+  }
+
+  const first = arr[0];
+  const rest = arr.slice(1);
+
+  return (first === target ? 1 : 0) + appear(rest, ta);
+}
+
+//console.log(appear([5, 1, 4, 4, 2, 8], 4))
+
+function replace(str, target, rep) {
+  if (str.length === 0) {
+    return '';
+  }
+
+  const first = str[0];
+  const rest = str.slice(1);
+
+  if (first === target) {
+    return rep + replace(rest, target, rep);
+  }else{
+    return first + replace(rest, target, rep);
+  } 
+}
+
+console.log(replace("akara", "a", "x"));
