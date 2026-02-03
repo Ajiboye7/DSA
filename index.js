@@ -214,7 +214,6 @@ function findMax(arr) {
 
   const maxOfRest = findMax(arr.slice(1));
 
- 
   return arr[0] > maxOfRest ? arr[0] : maxOfRest;
 }
 
@@ -269,6 +268,37 @@ function flatten(arr) {
 
 //console.log(isArray([1, 3, [5, 7], 9]))
 
+function appear(arr, target) {
+  if (arr.length === 0) {
+    return 0;
+  }
+
+  const first = arr[0];
+  const rest = arr.slice(1);
+
+  return (first === target ? 1 : 0) + appear(rest, ta);
+}
+
+//console.log(appear([5, 1, 4, 4, 2, 8], 4))
+
+function replace(str, target, rep) {
+  if (str.length === 0) {
+    return "";
+  }
+
+  const first = str[0];
+  const rest = str.slice(1);
+
+  if (first === target) {
+    return rep + replace(rest, target, rep);
+  } else {
+    return first + replace(rest, target, rep);
+  }
+}
+
+//console.log(replace("akara", "a", "x"));
+
+// SORTING
 function bubbleSort(arr) {
   let n = arr.length;
 
@@ -291,14 +321,12 @@ function bubbleSort(arr) {
 //console.log(bubbleSort([5, 1, 4, 2, 8]))
 
 // time complexity = O(n^2) : it contains nested loop
-// space complexity = O(n)
+// space complexity = O(1) : Sorting is done in one place, no extra array created. Only a few extra variables (temp, swapped).
 
 function insertionSort(arr) {
   for (let i = 1; i < arr.length; i++) {
     let key = arr[i];
     let j = i - 1;
-
-    // Move elements greater than key to one position ahead
     while (j >= 0 && arr[j] > key) {
       arr[j + 1] = arr[j];
       j--;
@@ -310,33 +338,80 @@ function insertionSort(arr) {
   return arr;
 }
 //console.log('Insertion sort',insertionSort([5, 1, 4, 2, 8]))
+// time complexity = O(n^2) : it contains nested loop
+// space complexity = O(1) : Sorting is done in one place, no extra array created. Only a few extra variables (key, j).
 
-function appear(arr, target) {
-  if (arr.length === 0) {
-    return 0;
+function quickSort(arr) {
+  if (arr.length < 2) {
+    return arr;
+  }
+  let left = [];
+  let right = [];
+  let pivot = arr[arr.length - 1];
+
+  for (i = 0; i < arr.length - 1; i++) {
+    if (arr[i] < pivot) {
+      left.push(arr[i]);
+    } else {
+      right.push(arr[i]);
+    }
   }
 
-  const first = arr[0];
-  const rest = arr.slice(1);
-
-  return (first === target ? 1 : 0) + appear(rest, ta);
+  return [...quickSort(left), pivot, ...quickSort(right)];
 }
 
-//console.log(appear([5, 1, 4, 4, 2, 8], 4))
+//console.log(quickSort([8, 20, -2, 4, -6]));
 
-function replace(str, target, rep) {
-  if (str.length === 0) {
-    return '';
+/*function mergeSort(arr){
+  if(arr.length < 2){
+    return arr
   }
 
-  const first = str[0];
-  const rest = str.slice(1);
+  const mid = Math.floor(arr.length / 2)
+  const left = arr.slice(0, mid)
+  const right = arr.slice(mid)
 
-  if (first === target) {
-    return rep + replace(rest, target, rep);
-  }else{
-    return first + replace(rest, target, rep);
-  } 
+  return merge(mergeSort(left), mergeSort(right))
 }
 
-console.log(replace("akara", "a", "x"));
+function merge(left, right){
+  const sortedArr = []
+
+  while(left.length && right.length){
+    if(left[0] <= right[0]){
+      sortedArr.push(left.shift())
+    }else{
+      sortedArr.push(right.shift())
+    }
+  }
+
+  return [...sortedArr, ...left, ...right]
+}
+console.log(mergeSort([8, 20, -2, 4, -6]));*/
+
+function mergeSort(arr) {
+  if (arr.length < 2) {
+   return arr;
+  }
+  const mid = Math.floor(arr.length / 2)
+  const leftArray = arr.slice(0, mid);
+  const rightArray = arr.slice(mid)
+   
+  return merge(mergeSort(leftArray), mergeSort(rightArray)) 
+}
+
+
+function merge (leftArray, rightArray){    
+  const sortedArray = []
+  while(leftArray.length && rightArray.length){
+    if(leftArray[0] <= rightArray[0]){
+      sortedArray.push(leftArray.shift())
+    }else{
+      sortedArray.push(rightArray.shift())
+    }
+  }
+
+  return [...sortedArray, ...leftArray, ...rightArray]
+}
+console.log(mergeSort([8, 20, -2, 4, 7,-6]));
+
