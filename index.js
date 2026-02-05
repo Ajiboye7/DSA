@@ -385,4 +385,42 @@ function merge(leftArray, rightArray) {
 
   return [...sortedArray, ...leftArray, ...rightArray];
 }
-console.log(mergeSort([8, 20, -2, 4, 7, -6]));
+//console.log(mergeSort([8, 20, -2, 4, 7, -6]));
+
+function cartesianProduct(arr1, arr2) {
+  const result = [];
+  for (i = 0; i < arr1.length; i++) {
+    for (j = 0; j < arr2.length; j++) {
+      result.push([arr1[i], arr2[j]]);
+    }
+  }
+  return result;
+}
+
+//console.log(cartesianProduct([1, 2, 3], [4, 5, 6]));
+
+function climbingStaircase(n) {
+  const noOfways = [1, 2];
+
+  for (i = 2; i <= n; i++) {
+    noOfways[i] = noOfways[i - 1] + noOfways[i - 2];
+  }
+
+  return noOfways[n - 1];
+}
+
+//console.log(climbingStaircase(5))
+
+function towerOfHanoi(n, source, auxiliary, destination) {
+  if (n === 1) {
+    console.log(`Move disk 1 from ${source} to ${destination}`);
+    return;
+  }
+
+  towerOfHanoi(n - 1, source, destination, auxiliary);
+  console.log(`Move disk ${n} from ${source} to ${destination}`);
+  towerOfHanoi(n - 1, auxiliary, source, destination);
+}
+
+towerOfHanoi(5, 'A', 'B', 'C');
+
