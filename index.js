@@ -413,14 +413,52 @@ function climbingStaircase(n) {
 
 function towerOfHanoi(n, source, auxiliary, destination) {
   if (n === 1) {
-    console.log(`Move disk 1 from ${source} to ${destination}`);
+    //console.log(`Move disk 1 from ${source} to ${destination}`);
     return;
   }
 
   towerOfHanoi(n - 1, source, destination, auxiliary);
-  console.log(`Move disk ${n} from ${source} to ${destination}`);
+  //console.log(`Move disk ${n} from ${source} to ${destination}`);
   towerOfHanoi(n - 1, auxiliary, source, destination);
 }
 
 towerOfHanoi(5, 'A', 'B', 'C');
 
+// DATA STRUCTURE
+//OBJECT
+
+const obj = {
+  name : 'Ajiboye',
+  age : 20,
+  'student' : false,
+  sayName : function (){
+    //console.log(this.name)
+  }
+}
+
+//obj.sayName()
+//console.log(obj['student'])
+
+//SET
+const set = new Set ([1,2,3])
+for(const item of set){
+  console.log(item)
+}
+
+/*set.add(4)
+set.delete(2)
+console.log(set.has(4))
+console.log(set)
+set.clear()*/
+
+//MAP
+const map = new Map([['a', 1], ['b', 2]])
+map.set('c', 3)
+map.delete('c')
+console.log(map.has('a'))
+console.log(map.size)
+map.clear()
+
+for( const [key, value] of map){
+  console.log(`${key}: ${value}`)
+}
