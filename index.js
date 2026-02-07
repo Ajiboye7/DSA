@@ -425,6 +425,7 @@ function towerOfHanoi(n, source, auxiliary, destination) {
 towerOfHanoi(5, 'A', 'B', 'C');
 
 // DATA STRUCTURE
+//ARRAY
 //OBJECT
 
 const obj = {
