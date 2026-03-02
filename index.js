@@ -204,10 +204,10 @@ function findMax(arr) {
   }
 }
 
-//console.log(findMax([1, 2, 3, 4, 5]));
+//console.log(findMax([1, 2, 3, 4, 5,8]));
 
 function findMax(arr) {
-  // Base case
+  
   if (arr.length === 1) {
     return arr[0];
   }
