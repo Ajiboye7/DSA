@@ -190,7 +190,7 @@ function countVowels(str) {
   return (vowels.includes(firstChar) ? 1 : 0) + countVowels(str.slice(1));
 }
 
-//console.log(countVowels('ajiboye'))
+//console.log(countVowels('ajiboyeee'))
 
 function findMax(arr) {
   if (arr.length === 0) {
@@ -207,7 +207,7 @@ function findMax(arr) {
 //console.log(findMax([1, 2, 3, 4, 5,8]));
 
 function findMax(arr) {
-  
+  // Base case
   if (arr.length === 1) {
     return arr[0];
   }
