@@ -1,4 +1,5 @@
-//1. MATH ALGORITHM\
+
+//1. MATH ALGORITHM
 
 //Fibonacci(Iterative)
 function fibonacci(n) {
@@ -119,7 +120,6 @@ function binarySearch(arr, target) {
   return -1;
 }
 //console.log(binarySearch([1, 2, 4, 5, 6], 6));
-
 //time complexity = o(log n) : Each loop removes half the array.
 //space complexity = o(1) : No recursion, no extra memory
 
@@ -136,6 +136,7 @@ function recursiveBinarySearch(
 
   if (arr[middleIndex] === target) {
     return middleIndex;
+ 
   }
 
   if (arr[middleIndex] > target) {
