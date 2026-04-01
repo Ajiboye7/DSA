@@ -96,7 +96,7 @@ function findIndex(array, target) {
 }
 //console.log(findIndex([1,2,3,4,5,6,7,8], 4))
 //time complexity = o(n) : Worst case: element is last or not present. check every element once.
-//space complexity = o(1) : No extra memory
+//space complexity = o(1) : No extra memory!
 
 //Binary Search Algorithm
 function binarySearch(arr, target) {
