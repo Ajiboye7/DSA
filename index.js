@@ -11,7 +11,7 @@ function fibonacci(n) {
   return fib;
 }
 
-//console.log(fibonacci(7))
+//console.log(fibonacci(71))
 //time complexity = o(n) : One "for" loop. Loop runs from 2 to n. Each iteration does constant work. Work grows linearly with nz
 
 //space complexity = o(n): You create an array fib that stores n elements. More input → more memory. Rule:
