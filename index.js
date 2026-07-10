@@ -169,7 +169,7 @@ function countVowels(str) {
   return (vowels.includes(firstChar) ? 1 : 0) + countVowels(str.slice(1));
 }
 
-//console.log(countVowels('ajiboye Muyideen olanrewaju Akanni'))
+//console.log(countVowels('ajiboye Muyideen olanrewaju Akanni Bolaji'))
 
 function findMax(arr) {
   if (arr.length === 0) {
