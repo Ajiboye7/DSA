@@ -120,7 +120,7 @@ function binarySearch(arr, target) {
 
   return -1;
 }
-//console.log(binarySearch([1, 2, 4, 5, 6,7], 6));
+//console.log(binarySearch([1, 2, 4, 5, 6,7], 4));
 //time complexity = o(log n) : Each loop removes half the array.
 //space complexity = o(1) : No recursion, no extra memory
 
