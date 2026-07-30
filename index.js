@@ -80,7 +80,7 @@ function factorialRecursive(n) {
 
   return n * factorialRecursive(n - 1);
 }
-//console.log(factorialRecursive(120));
+//console.log(factorialRecursive(130));
 //time complexity = o(n2) : Two recursive calls per function. Branching recursion → exponential.
 //space complexity = o(n) : Call stack depth grows with n
 
