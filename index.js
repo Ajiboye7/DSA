@@ -275,7 +275,7 @@ function replace(str, target, rep) {
   }
 }
 
-//console.log(replace("akara", "a", "x"));
+//console.log(replace("akara", "a"));
 
 // SORTING
 function bubbleSort(arr) {
