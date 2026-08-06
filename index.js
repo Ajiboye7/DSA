@@ -297,7 +297,7 @@ function bubbleSort(arr) {
   return arr;
 }
 
-//console.log(bubbleSort([5, 1, 4, 2, 8]))
+//console.log(bubbleSort([5, 1, 4, 2, 8, 0, 2, 3, 6, 7]));
 
 // time complexity = O(n^2) : it contains nested loop
 // space complexity = O(1) : Sorting is done in one place, no extra array created. Only a few extra variables (temp, swapped).
