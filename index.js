@@ -376,7 +376,7 @@ function cartesianProduct(arr1, arr2) {
   return result;
 }
 
-//console.log(cartesianProduct([1, 2, 3], [4, 5, 6,7]));
+//console.log(cartesianProduct([1, 2, 3], [4, 5, 6]));
 
 function climbingStaircase(n) {
   const noOfways = [1, 2];
