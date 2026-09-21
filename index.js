@@ -339,7 +339,7 @@ function quickSort(arr) {
   return [...quickSort(left), pivot, ...quickSort(right)];
 }
 
-//console.log(quickSort([8, 20, -2, 4, -6]));
+//console.log(quickSort([8, 20, -2, 4, -6,7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]));
 
 function mergeSort(arr) {
   if (arr.length < 2) {
