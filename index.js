@@ -209,7 +209,7 @@ function palindrome(str) {
   return palindrome(str.slice(1, -1));
 }
 
-//console.log(palindrome('madameedcv'))
+//console.log(palindrome('madameed'))
 
 function binarySearch2(arr, target) {
   if (arr.length === 0) {
