@@ -316,7 +316,7 @@ function insertionSort(arr) {
   }
   return arr;
 }
-//console.log('Insertion sort',insertionSort([5, 1, 4, 2, 8]))
+//console.log('Insertion sort',insertionSort([5, 1, 4, 2, 86]))
 // time complexity = O(n^2) : it contains nested loop
 // space complexity = O(1) : Sorting is done in one place, no extra array created. Only a few extra variables (key, j).
 
