@@ -425,7 +425,7 @@ for(const item of set){
   console.log(item)
 }
 
-/*set.add(4)
+/*set.add(43)
 set.delete(2)
 console.log(set.has(4))
 console.log(set)
