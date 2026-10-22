@@ -364,7 +364,7 @@ function merge(leftArray, rightArray) {
 
   return [...sortedArray, ...leftArray, ...rightArray];
 }
-//console.log(mergeSort([8, 20, -2, 4, 7, -6, 0, 8, 4, 7, 9, 1, 2]));
+//console.log(mergeSort([8, 20, -2, 4, 7, -6, 0, 8, 4, 7, 9, 1]));
 
 function cartesianProduct(arr1, arr2) {
   const result = [];
