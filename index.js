@@ -388,7 +388,7 @@ function climbingStaircase(n) {
   return noOfways[n - 1];
 }
 
-//console.log(climbingStaircase(17))
+//console.log(climbingStaircase(27))
 
 function towerOfHanoi(n, source, auxiliary, destination) {
   if (n === 1) {
