@@ -408,7 +408,7 @@ towerOfHanoi(5, 'A', 'B', 'C');
 //OBJECT
 
 const obj = {
-  name : 'Ajiboye',
+  name : 'muyideeen',
   age : 20,
   'student' : false,
   sayName : function (){
