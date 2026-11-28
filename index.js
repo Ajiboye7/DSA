@@ -401,7 +401,7 @@ function towerOfHanoi(n, source, auxiliary, destination) {
   towerOfHanoi(n - 1, auxiliary, source, destination);
 }
 
-towerOfHanoi(5, 'A', 'B', 'C', 'D');
+towerOfHanoi(5, 'A', 'B', 'C',);
 
 // DATA STRUCTURE
 //ARRAY
